@@ -301,11 +301,6 @@ class TestUserRegistration:
         expected_email = "test@test.com"
         expected_password = "test1234!"
         expected_user_input = iter([expected_username, expected_email, expected_password])
-        expected_output = {
-            "username": expected_username,
-            "email": expected_email,
-            "password": expected_password
-        }
         monkeypatch.setattr("builtins.input", lambda _: next(expected_user_input))
 
         # Act
@@ -366,4 +361,3 @@ class TestUserRegistration:
         # Assert
         assert str(e.value) == expected_error
         assert e.type == ValueError
-        
