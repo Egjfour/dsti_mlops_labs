@@ -1,0 +1,25 @@
+[build-system]
+requires = [ "setuptools",]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mlops_labs"
+readme = "README.md"
+dynamic = [ "dependencies", "version",]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+namespaces = false
+
+[tool.pytest.ini_options]
+pythonpath="."
+testpaths = "tests"
+addopts = """
+--import-mode=importlib
+--cov-report term-missing \
+--cov src -ra"""
+
+[tool.coverage.report]
+fail_under = 0
+show_missing = true
+exclude_lines = ["pragma: no cover", "raise NotImplementedError"]

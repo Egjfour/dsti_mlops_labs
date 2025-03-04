@@ -1,0 +1,7 @@
+*.csv
+*.txt
+*.parquet
+*.png
+*.jpg
+.venv
+.env
