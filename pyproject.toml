@@ -9,6 +9,12 @@ authors = [
   { name="Eddie Jenkins", email="eddie.jenkins@edu.dsti.institute" },
 ]
 description = "A package to practice concepts related to DevOps and MLOps"
+name = "dsti_mlops_labs_egjfour"
+version = "0.0.1"
+authors = [
+  { name="Eddie Jenkins", email="eddie.jenkins@edu.dsti.institute" },
+]
+description = "A package to practice concepts related to DevOps and MLOps"
 readme = "README.md"
 requires-python = ">=3.9"
 classifiers = [
