@@ -13,6 +13,9 @@ jobs:
         permissions:
             contents: read
             id-token: write
+        environment:
+            name: pypi
+            url: https://pypi.org/p/dsti_mlops_labs_egjfour
         steps:
             - uses: actions/checkout@v4
             - name: Set up Python ${{ matrix.python-version }}
