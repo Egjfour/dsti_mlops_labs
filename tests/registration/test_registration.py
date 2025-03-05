@@ -1,7 +1,7 @@
 #pylint: disable=missing-class-docstring,missing-module-docstring,line-too-long,missing-function-docstring,wildcard-import,redefined-outer-name
 import io
 import pytest
-from src.registration.registration import *
+from src.dsti_mlops_labs.registration.registration import *
 
 
 @pytest.fixture
