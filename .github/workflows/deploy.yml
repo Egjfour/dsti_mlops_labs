@@ -14,7 +14,7 @@ jobs:
             contents: read
             id-token: write
         environment:
-            name: pypi
+            name: testpypi
             url: https://pypi.org/p/dsti_mlops_labs_egjfour
         steps:
             - uses: actions/checkout@v4
@@ -30,6 +30,6 @@ jobs:
             - name: Build
               run: |
                   python3 -m build
-                  python3 -m twine upload --repository pypi dist/*
+                  python3 -m twine upload --repository testpypi dist/*
                   
       
