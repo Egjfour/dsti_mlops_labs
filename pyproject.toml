@@ -3,9 +3,23 @@ requires = [ "setuptools",]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "mlops_labs"
+name = "dsti_mlops_labs_egjfour"
+version = "0.0.1"
+authors = [
+  { name="Eddie Jenkins", email="eddie.jenkins@edu.dsti.institute" },
+]
+description = "A package to practice concepts related to DevOps and MLOps"
 readme = "README.md"
-dynamic = [ "dependencies", "version",]
+requires-python = ">=3.9"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+license-files = ["LICEN[CS]E*"]
+
+[project.urls]
+Homepage = "https://github.com/Egjfour/dsti_mlops_labs"
+Issues = "https://github.com/Egjfour/dsti_mlops_labs/issues"
 
 [tool.setuptools.packages.find]
 where = ["src"]
