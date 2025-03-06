@@ -11,3 +11,7 @@ This project exists to test and learn various DevOps and MLOps practices. The ac
     - Simple example using src.registration module
 - Build DevOps automation using GitHub actions
     - Linting, testing, and deployment to TestPyPi
+    - See deployed package using `pip install -i https://test.pypi.org/simple/ dsti-mlops-labs-egjfour`
+- Build and Deploy Docker Containers
+    - The built dockerfile is available on DockerHub at `egjfour/mlops_labs_registration`
+        - After pulling from DockerHub, run **in interactive mode** with `docker run -it mlops_labs_registration`
