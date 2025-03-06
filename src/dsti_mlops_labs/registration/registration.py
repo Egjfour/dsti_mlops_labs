@@ -1,6 +1,10 @@
 """
 Module to capture terminal input registration data for users
 """
+import os
+import subprocess
+from dotenv import load_dotenv
+load_dotenv()
 
 def prompt_user(question: str) -> str:
     """
@@ -179,3 +183,40 @@ def register_user() -> dict:
         'email': email,
         'password': password
     }
+
+# Execute the registration process if the script is directly run
+if __name__ == "__main__":
+    print("Registering the user")
+    user_details = register_user()
+
+    # Sink the user details to a file
+    filename = f"user_details_{user_details.get('username')}.txt"
+    current_path = os.getcwd()
+    filepath = os.path.join(current_path, filename)
+
+    # Debugging: Print the current working directory and file path
+    print("Current working directory:", current_path)
+    print("File will be written to:", filepath)
+
+    with open(filepath, "w", encoding='UTF-8') as f:
+        f.write(str(user_details))
+
+    # Verify the file was created
+    if not os.path.exists(filepath):
+        raise FileNotFoundError(f"The file {filepath} was not created successfully.")
+
+    # Copy out to blob with azcopy
+    BLOB_SAS_TOKEN = os.getenv("BLOB_SAS_TOKEN")
+    if not BLOB_SAS_TOKEN:
+        raise ValueError("BLOB_SAS_TOKEN environment variable is not set")
+
+    azcopy_command = [
+        "azcopy", "copy", filepath,
+        f"https://eddiejenkins.blob.core.windows.net/mlops-labs/registration/{filename}{BLOB_SAS_TOKEN}"
+    ]
+
+    # Debugging: Print the azcopy command
+    print("Running azcopy command:", " ".join(azcopy_command))
+
+    subprocess.run(azcopy_command, check=True)
+    print("User details registered successfully")
