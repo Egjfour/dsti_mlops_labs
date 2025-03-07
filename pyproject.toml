@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "dsti_mlops_labs_egjfour"
-version = "0.1.0"
+version = "0.2.0"
 authors = [
   { name="Eddie Jenkins", email="eddie.jenkins@edu.dsti.institute" },
 ]
