@@ -17,3 +17,4 @@ This project exists to test and learn various DevOps and MLOps practices. The ac
         - After pulling from DockerHub, run **in interactive mode** with `docker run -it egjfour/mlops_labs_registration`
 - Add data versioning to models and data with DVC
     - Adds the data directory and changes the wine_original dataset with versioning in DVC
+    - Tests the PythonSDK in notebooks/dvc_python_sdk_explore.ipynb
