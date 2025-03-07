@@ -12,6 +12,9 @@ This project exists to test and learn various DevOps and MLOps practices. The ac
 - Build DevOps automation using GitHub actions
     - Linting, testing, and deployment to TestPyPi
     - See deployed package using `pip install -i https://test.pypi.org/simple/ dsti-mlops-labs-egjfour`
-- Build and Deploy Docker Containers
+- Build and deploy Docker containers
     - The built dockerfile is available on DockerHub at `egjfour/mlops_labs_registration`
-        - After pulling from DockerHub, run **in interactive mode** with `docker run -it mlops_labs_registration`
+        - After pulling from DockerHub, run **in interactive mode** with `docker run -it egjfour/mlops_labs_registration`
+- Add data versioning to models and data with DVC
+    - Adds the data directory and changes the wine_original dataset with versioning in DVC
+    - Tests the PythonSDK in notebooks/dvc_python_sdk_explore.ipynb
