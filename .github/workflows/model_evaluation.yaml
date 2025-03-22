@@ -1,0 +1,19 @@
+name: model-training
+on:
+    pull_request:
+      branches: [ "main" ]
+jobs:
+  run:
+    permissions: write-all
+    runs-on: [ubuntu-latest]
+    steps:
+      - uses: actions/checkout@v2
+      - uses: iterative/setup-cml@v1
+      - name: Train model
+        env:
+          REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          pip install -r requirements.txt
+          python wine_linear_regression_test.py
+          cat metrics.txt >> report.md
+          cml-send-comment report.md
