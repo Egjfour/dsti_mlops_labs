@@ -11,6 +11,9 @@
 
 # COMMAND ----------
 
+# Turn off linting (PyLint) for this file as it comes from an external source
+# pylint: skip-file
+
 # Imports
 import os
 import warnings
