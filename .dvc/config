@@ -2,3 +2,6 @@
     remote = dsti_mlops_labs
 ['remote "dsti_mlops_labs"']
     url = /tmp/dvc-storage
+['remote "mlops_labs_azure"']
+    url = azure://mlops-labs
+    account_name = eddiejenkins
