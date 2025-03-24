@@ -21,3 +21,7 @@ This project exists to test and learn various DevOps and MLOps practices. The ac
 - Explore data testing in Jupyter with Pytest
     - Adds notebooks/model-and-data-tests/testing_initial.ipynb
     - Shows ydata_profiling module, ipytest for testing in Jupyter and example Great Expectations usage
+- Track experiments of a simple ML model in a Jupyter notebook using MLFlow
+    - Adds notebooks/experiment_tracking/initial_elasticnet.ipynb
+    - Uses the autologging feature available from MLFlow to track elastic net and random forest regressors
+    - mlruns cache is saved using DVC to Azure blob
