@@ -16,4 +16,6 @@ RUN rm requirements.txt
 # Run the registration script when the container launches
 CMD ["python", "main.py"]
 
+EXPOSE 9696
+
 ENTRYPOINT ["gunicorn", "--bind=0.0.0.0:9696", "main:app"]
