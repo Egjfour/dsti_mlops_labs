@@ -25,3 +25,11 @@ This project exists to test and learn various DevOps and MLOps practices. The ac
     - Adds notebooks/experiment_tracking/initial_elasticnet.ipynb
     - Uses the autologging feature available from MLFlow to track elastic net and random forest regressors
     - mlruns cache is saved using DVC to Azure blob
+- Deployment of a simple regression model using Flask, gunicorn, and Docker on an Azure Web App
+    - Adds the wine_app folder with relevant model files and a new Dockerfile
+    - Adds `predict_model_locally.py` script to allow for predictions against the container or the web app
+    - Built dockerfile is available at DockerHub at `egjfour/wine-app`
+        - Make sure to run `-p 9696:9696` flag
+    - Deployment was completed on Azure Web Apps at `wine-app2.azurewebsites.net`
+        - test endpoint supports `GET` method
+        - predict endpoint supports `POST` method to provide JSON of data to get wine quality predictions
