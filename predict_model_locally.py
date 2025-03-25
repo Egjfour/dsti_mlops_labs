@@ -14,8 +14,8 @@ new_data = {
     'alcohol': [9.3, 13.4, 12.2]
     }
 # url = "http://localhost:9696/predict" # use if running wine_app locally
-url = "https://wine-app-ewhsa3h5euheajdq.eastus-01.azurewebsites.net/predict" # use if running wine_app on Azure
+url = "https://wine-app2.azurewebsites.net/predict" # use if running wine_app on Azure
 print(f"running on {url}")
-r = requests.post(url, json = new_data, timeout=10)
+r = requests.post(url, json = new_data, timeout=30)
 r.text.strip()
 print(r.text.strip())
