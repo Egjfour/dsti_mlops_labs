@@ -75,10 +75,11 @@ def train(alpha=0.3, l1_ratio=0.5):
         outfile.write("  MAE: %s" % mae)
         outfile.write("  R2: %s" % r2)
 
-train()
+    return lr
+
+lr = train()
 
 import pickle
 ##dump the model into a file
 with open("model.bin", 'wb') as f_out:
     pickle.dump(lr, f_out) # write final_model in .bin file
-    f_out.close()  # close the file
